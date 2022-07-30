@@ -12,7 +12,7 @@ public class LoginTest {
         driver.findElement(By.cssSelector("#header > div > div.skip-links > div > a > span.label")).click();
         driver.findElement(By.cssSelector("#header-account > div > ul > li.last > a")).click();
         driver.findElement(By.id("email")).sendKeys("cosmin@fasttrackit.org");
-        driver.findElement(By.id("pass")).sendKeys("123456");
+        driver.findElement(By.id("pass")).sendKeys("1234567");
         driver.findElement(By.id("send2")).click();
         driver.quit();
     }
