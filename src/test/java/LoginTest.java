@@ -14,6 +14,15 @@ public class LoginTest {
         driver.findElement(By.id("email")).sendKeys("cosmin@fasttrackit.org");
         driver.findElement(By.id("pass")).sendKeys("1234567");
         driver.findElement(By.id("send2")).click();
+        wait(3);
         driver.quit();
+    }
+
+    public static void wait(int seconds){
+        try {
+            Thread.sleep(seconds*1000L);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

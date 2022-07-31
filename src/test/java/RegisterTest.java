@@ -20,7 +20,17 @@ public class RegisterTest {
         driver.findElement(By.id("confirmation")).sendKeys("12345");
         driver.findElement(By.id("is_subscribed")).click();
         driver.findElement(By.cssSelector("#form-validate > div.buttons-set > button")).click();
+        wait(3);
         driver.quit();
 
     }
+    public static void wait(int seconds) {
+        try {
+            Thread.sleep(seconds * 1000L);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
 }
