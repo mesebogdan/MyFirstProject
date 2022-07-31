@@ -5,6 +5,14 @@ public class Main {
       LoginTest loginTest = new LoginTest();
       loginTest.validLoginTest();
 
+      RegisterTest registerTest = new RegisterTest();
+      registerTest.validRegisterTest();
+
+      WishListTest wishListTest = new WishListTest();
+      wishListTest.validWishListTest();
+
+
+
 
     }
 
