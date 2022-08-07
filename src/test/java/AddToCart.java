@@ -7,30 +7,33 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WishListTest {
+public class AddToCart {
 
     private WebDriver driver;
 
     @Before
 
-    public void initDriver(){
+    public void initDriver() {
         System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("http://testfasttrackit.info/selenium-test");
     }
+
     @Test
-    public void validWishListTest() {
+    public void validAddToCart() {
 
         driver.findElement(By.cssSelector(".level0.nav-5.parent .level0")).click();
         driver.findElement(By.cssSelector("[title='View Details']")).click();
-        driver.findElement(By.cssSelector(".link-wishlist")).click();
+        driver.findElement(By.cssSelector("[alt='Blue']")).click();
+        driver.findElement(By.cssSelector("[title='XS'] .swatch-label")).click();
+        driver.findElement(By.cssSelector(".add-to-cart-buttons .button")).click();
+        wait(3);
 
-        WebElement checkWishList = driver.findElement(By.cssSelector("div h1"));
-        Assert.assertTrue(checkWishList.isDisplayed());
-
-
+        WebElement checkAddToCart = driver.findElement(By.cssSelector("h1"));
+        Assert.assertTrue(checkAddToCart.isDisplayed());
     }
+
     @After
     public void closedriver(){
         driver.close();
@@ -45,6 +48,4 @@ public class WishListTest {
             throw new RuntimeException(e);
         }
     }
-
-
 }

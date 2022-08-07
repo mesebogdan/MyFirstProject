@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class WishListTest {
+public class AddToCompareList {
 
     private WebDriver driver;
 
@@ -20,14 +20,14 @@ public class WishListTest {
         driver.get("http://testfasttrackit.info/selenium-test");
     }
     @Test
-    public void validWishListTest() {
+    public void validAddingToCompareList() {
 
         driver.findElement(By.cssSelector(".level0.nav-5.parent .level0")).click();
         driver.findElement(By.cssSelector("[title='View Details']")).click();
-        driver.findElement(By.cssSelector(".link-wishlist")).click();
+        driver.findElement(By.cssSelector(".link-compare")).click();
 
-        WebElement checkWishList = driver.findElement(By.cssSelector("div h1"));
-        Assert.assertTrue(checkWishList.isDisplayed());
+        WebElement checkCompareList = driver.findElement(By.cssSelector(".block-compare strong span"));
+        Assert.assertTrue(checkCompareList.isDisplayed());
 
 
     }
@@ -45,6 +45,5 @@ public class WishListTest {
             throw new RuntimeException(e);
         }
     }
-
 
 }
